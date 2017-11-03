@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+gem 'devise'
 
 group :production do
   gem 'pg'
@@ -28,6 +29,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'faker'
-  gem 'factory_girl_rails'
+  gem 'factory_bot'
   gem 'pry-rails'
 end
