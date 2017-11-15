@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :users, only: [:update, :show]
 
   authenticated :user do
-    root to: "user#show", as: :authenticated_root, via: :get
+    root to: "users#show", as: :authenticated_root, via: :get
   end
+
+ get 'welcome/about'
 
   unauthenticated do
     root to: 'welcome#index'
