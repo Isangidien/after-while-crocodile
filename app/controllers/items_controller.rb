@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def new
     @user = User.find(params[:user_id])
     @item = Item.new
@@ -15,6 +16,16 @@ class ItemsController < ApplicationController
       flash[:notice] = "Your item was saved."
     else
       flash[:error] = "There was an error saving your item."
+    end
+  end
+
+  def destroy
+    @item = current_user.items.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = "Item completed!"
+    else
+      flash[:alert] = "There was an error deleting the item, please try again."
     end
 
     respond_to do |format|

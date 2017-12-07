@@ -26,9 +26,11 @@ gem 'figaro'
 group :development, :test do
   gem 'byebug'
   gem 'spring'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0'
   gem 'shoulda'
   gem 'faker'
   gem 'factory_bot'
   gem 'pry-rails'
+  gem 'simplecov'
+  gem 'factory_girl_rails'
 end
