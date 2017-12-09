@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { create(:user) }
+  let(:item) { create(:item) }
+
+  it { is_expected.to belong_to(:user) }
+
+  describe "attributes" do
+    it "has name and user attributes" do
+      expect(item).to have_attributes(name: item.name)
+    end
+  end
 end

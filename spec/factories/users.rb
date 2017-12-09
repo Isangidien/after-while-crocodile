@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   pw = Faker::Internet.password
   factory :user do
     email Faker::Internet.email
