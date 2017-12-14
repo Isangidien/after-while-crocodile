@@ -6,31 +6,24 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @items = @user.items
     @item = current_user.items.build(item_params)
-    @item.user = @user
-    @new_item = Item.new
 
     if @item.save
       flash[:notice] = "Your item was saved."
     else
       flash[:error] = "There was an error saving your item."
     end
-  end
+
+    @items = @user.items
 
   def destroy
-    @item = current_user.items.find(params[:id])
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
 
     if @item.destroy
-      flash[:notice] = "Item completed!"
+      flash[:notice] = "Item was completed."
     else
-      flash[:alert] = "There was an error deleting the item, please try again."
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
+      flash[:error] = "Item couldn't be removed. Try again."
     end
   end
 
