@@ -3,10 +3,9 @@
     <%= form_for [@user, @user.items.build], remote: true do |f| %>
       </br>
       <%= f.text_field :name, class: 'form-control', placeholder: "Add another Todo item" %>
-  </br>
+  </div>
   <div class="form-group">
       <%= f.submit "Submit To-Do item", class: 'btn btn-success' %>
     <% end %>
-    </div>
   </div>
 </div>
