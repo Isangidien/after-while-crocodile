@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
     end
 
     @items = @user.items
+  end
 
   def destroy
     @user = User.find(params[:user_id])

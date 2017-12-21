@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 get 'items/create'
 
   devise_for :users
-  resources :users, only: [:update, :show] do
+  resources :users, only: [:update, :show, :index] do
     resources :items
   end
 
