@@ -1,8 +1,16 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <div class= 'media-body'>
 
-    <h4 class= 'text-center'><%= item.name %></h4>
-    <%= link_to "", [item.user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
-
+    <div class='row'>
+      <div class= 'col-md-7'>
+        <h4 class= 'text-center'><%= item.name %></h4>
+      </div>
+      <div class = 'col-md-3'>
+        <%= item.days_left %> days left!
+      </div>
+      <div class='col-md-2'>
+    <%= link_to " ", [item.user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+     </div>
+    </div>
   </div>
 <% end %>
